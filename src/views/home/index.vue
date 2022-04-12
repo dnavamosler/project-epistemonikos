@@ -2,6 +2,9 @@
   <b-container>
     <b-row class="justify-content-center">
       <b-col cols="12">
+        <custom-header icon="cryptocurrencies" title="Cryptocurrencies List" />
+      </b-col>
+      <b-col cols="12">
         <b-table
           id="coins"
           small
@@ -40,8 +43,9 @@
 <script>
 import { paginate } from "@/utils/paginate";
 import { MakeRequest } from "@/utils/makeRequest";
+import CustomHeader from "../../components/customHeader.vue";
 export default {
-  components: {},
+  components: { CustomHeader },
   mounted() {
     this.getInitialData();
   },

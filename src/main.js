@@ -12,7 +12,7 @@ Vue.use(IconsPlugin);
 Vue.use(VueSweetalert2);
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
-import "bootstrap/dist/css/bootstrap.css";
+import "@/assets/styles/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 
 Vue.config.productionTip = false;

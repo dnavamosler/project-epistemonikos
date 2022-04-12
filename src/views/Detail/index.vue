@@ -112,7 +112,7 @@ export default {
           symbol: e.symbol,
           rank: e.rank,
           type: e.type,
-          description: e.description,
+          description: e.description || "N/A",
           proof_type: e.proof_type,
         };
       });

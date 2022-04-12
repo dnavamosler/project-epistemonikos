@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="mb-4">
     <h3
       style="text-align: start; font-weight: bold; gap: 4px"
-      class="mb-3 d-flex align-items-end"
+      class="d-flex align-items-end"
     >
       <render-icon :icon="icon" v-if="icon" />
       <span>{{ title }}</span>
