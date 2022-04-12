@@ -2,7 +2,7 @@
   <div id="app">
     <loading-state />
     <div class="navigation"><navegacion /></div>
-    <div class="py-5">
+    <div class="pt-5">
       <router-view />
     </div>
   </div>
