@@ -43,6 +43,7 @@ import { paginate } from "@/utils/paginate";
 import { MakeRequest } from "@/utils/makeRequest";
 import CustomHeader from "@/components/customHeader.vue";
 import TemplatePage from "@/components/ui/templatePage.vue";
+import { mapActions } from "vuex";
 export default {
   components: { CustomHeader, TemplatePage },
   mounted() {

@@ -31,6 +31,7 @@ import { NumericToDollar } from "@/utils/NumericToDollar";
 import customHeader from "@/components/customHeader.vue";
 import DetailCoin from "./detail-coin.vue";
 import TemplatePage from "@/components/ui/templatePage.vue";
+import { mapActions } from "vuex";
 export default {
   components: { customHeader, DetailCoin, TemplatePage },
   data() {
@@ -111,7 +112,7 @@ export default {
           rank: e.rank,
           type: e.type,
           description: e.description || "N/A",
-          proof_type: e.proof_type,
+          proof_type: e.proof_type || "N/A",
         };
       });
     },

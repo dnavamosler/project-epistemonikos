@@ -1,19 +1,17 @@
 <template>
   <div id="app">
+    <loading-state />
     <div class="navigation"><navegacion /></div>
-    <!--  <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
     <div class="py-5">
       <router-view />
     </div>
   </div>
 </template>
 <script>
+import LoadingState from "./components/ui/loadingState.vue";
 import navegacion from "./components/ui/navegacion.vue";
 export default {
-  components: { navegacion },
+  components: { navegacion, LoadingState },
 };
 </script>
 <style lang="scss">
