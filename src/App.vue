@@ -1,13 +1,21 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <navegacion />
+    <!--  <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
+    </div> -->
+    <div class="py-5">
+      <router-view />
     </div>
-    <router-view />
   </div>
 </template>
-
+<script>
+import navegacion from "./components/ui/navegacion.vue";
+export default {
+  components: { navegacion },
+};
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -30,3 +38,5 @@
   }
 }
 </style>
+
+

@@ -9,7 +9,20 @@
           hover
           :items="paginateCoins"
           :fields="fields"
-        ></b-table>
+        >
+          <template #cell(symbol)="{ item }">
+            <div class="d-flex justify-content-center">
+              <b-button
+                style="width: 150px"
+                size="sm"
+                small
+                @click="(e) => goDetail(item.id)"
+                variant="outline-info"
+                >🔎 <span class="font-weight-bold">{{ item.symbol }}</span>
+              </b-button>
+            </div>
+          </template>
+        </b-table>
       </b-col>
       <b-col class="d-flex justify-content-center" cols="12">
         <b-pagination
@@ -34,7 +47,7 @@ export default {
   },
   data() {
     return {
-      perPage: 15,
+      perPage: 15 /* Change this to show another value of rows */,
       coins: [],
       fields: [
         { label: "Symbol", key: "symbol" },
@@ -47,20 +60,27 @@ export default {
     };
   },
   computed: {
+    /* return te current page */
     currentPage() {
       return this.$route.query.page ? parseInt(this.$route.query.page) : 1;
     },
+    /* return the rows count */
     rows() {
       return this.coins.length;
     },
+    /* Use the utils @paginate for paginate all coins in chunks */
     paginateCoins() {
       return paginate(this.perPage, this.coins)[this.currentPage - 1];
     },
   },
   methods: {
+    /* Change route to detail [COIN] */
+    goDetail(coin) {
+      this.$router.push(`/coin/${coin}`);
+    },
+    /* Change current page for the new one */
     changePage(page) {
       const currentPath = this.$route.path;
-
       this.$router.push({
         path: currentPath,
         query: {
@@ -68,8 +88,11 @@ export default {
         },
       });
     },
+    /* Consume API to get the initial coins data... 
+    needs processing for pagination since the api does not have pagination */
     async getInitialData() {
       MakeRequest({ path: "coins" }).then((e) => {
+        console.log(e);
         this.coins = e.map((coin) => {
           return {
             ...coin,
@@ -83,5 +106,5 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 </style>
