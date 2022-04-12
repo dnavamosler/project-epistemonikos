@@ -1,7 +1,7 @@
 import axios from "axios";
 import launchFeedback from "./launchFeedback";
 import store from "@/store";
-/* Auxiliar para realizar peticiones. */
+/* this utility makes queries to the assigned api */
 const MakeRequest = ({ path }) => {
   const options = {
     method: "GET",

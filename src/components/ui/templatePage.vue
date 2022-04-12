@@ -39,6 +39,7 @@ export default {
     },
   },
   methods: {
+    /* Go to back page */
     backFn() {
       this.$router.back();
     },

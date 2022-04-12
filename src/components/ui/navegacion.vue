@@ -16,6 +16,7 @@ export default {
     RenderIcon,
   },
   methods: {
+    /* go to main page */
     goToHome() {
       this.$router.push("/");
     },

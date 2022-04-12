@@ -10,6 +10,7 @@
 import { mapState } from "vuex";
 export default {
   computed: {
+    /* get the state of loading */
     ...mapState(["loading"]),
   },
 };

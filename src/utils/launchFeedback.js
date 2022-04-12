@@ -1,5 +1,6 @@
 import vue from "vue";
 
+/* this utility displays an alert to give feedback to the user  */
 const launchFeedback = ({ title, text, icon = "success" }) => {
   return new Promise((resolve, reject) => {
     vue

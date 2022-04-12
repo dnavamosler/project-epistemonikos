@@ -1,3 +1,4 @@
+/* this utility divides large quantities into segments */
 const paginate = (perChunk, inputArray) => {
   var result = inputArray.reduce((resultArray, item, index) => {
     const chunkIndex = Math.floor(index / perChunk);

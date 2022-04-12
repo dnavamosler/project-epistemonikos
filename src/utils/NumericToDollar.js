@@ -1,3 +1,4 @@
+/* this utility humanizes numerical quantities */
 const NumericToDollar = (value) => {
   return `$${value
     .toFixed(2)

@@ -6,11 +6,13 @@ import Detail from "../views/Detail";
 Vue.use(VueRouter);
 
 const routes = [
+  /* Main route */
   {
     path: "/",
     name: "Home",
     component: Home,
   },
+  /* Detail route */
   {
     path: "/coin/:id",
     name: "Detail",
