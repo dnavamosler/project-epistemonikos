@@ -1,9 +1,6 @@
 <template>
-  <b-container>
+  <template-page :back="true" icon="cryptocurrencies" title="Detail of Crypto">
     <b-row class="mb-5">
-      <b-col cols="12">
-        <custom-header icon="cryptocurrencies" :title="`Detail of Crypto`"
-      /></b-col>
       <b-col cols="12"> <detail-coin :data="detail" /></b-col>
     </b-row>
     <b-row>
@@ -24,17 +21,18 @@
         </b-table>
       </b-col>
     </b-row>
-  </b-container>
+  </template-page>
 </template>
 
 <script>
 import moment from "moment";
 import { MakeRequest } from "@/utils/makeRequest";
 import { NumericToDollar } from "@/utils/NumericToDollar";
-import customHeader from "../../components/customHeader.vue";
+import customHeader from "@/components/customHeader.vue";
 import DetailCoin from "./detail-coin.vue";
+import TemplatePage from "@/components/ui/templatePage.vue";
 export default {
-  components: { customHeader, DetailCoin },
+  components: { customHeader, DetailCoin, TemplatePage },
   data() {
     return {
       /* Placeholder of detail */

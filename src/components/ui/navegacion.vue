@@ -1,29 +1,36 @@
 <template>
   <div>
     <b-navbar type="dark" variant="dark" class="px-4">
-      <b-navbar-nav>
-        <b-nav-item href="#">Home</b-nav-item>
-
-        <!-- Navbar dropdowns -->
-        <b-nav-item-dropdown text="Lang" right>
-          <b-dropdown-item href="#">EN</b-dropdown-item>
-          <b-dropdown-item href="#">ES</b-dropdown-item>
-          <b-dropdown-item href="#">RU</b-dropdown-item>
-          <b-dropdown-item href="#">FA</b-dropdown-item>
-        </b-nav-item-dropdown>
-
-        <b-nav-item-dropdown text="User" right>
-          <b-dropdown-item href="#">Account</b-dropdown-item>
-          <b-dropdown-item href="#">Settings</b-dropdown-item>
-        </b-nav-item-dropdown>
-      </b-navbar-nav>
+      <div @click="goToHome" class="d-flex align-items-end home">
+        <renderIcon icon="crypto" />
+        <h2 class="title ml-2">CryptoStatistics</h2>
+      </div>
     </b-navbar>
   </div>
 </template>
 
 <script>
-export default {};
+import RenderIcon from "../renderIcon.vue";
+export default {
+  components: {
+    RenderIcon,
+  },
+  methods: {
+    goToHome() {
+      this.$router.push("/");
+    },
+  },
+};
 </script>
 
-<style>
+
+<style >
+.home {
+  cursor: pointer;
+}
+.title {
+  color: white !important;
+  margin: 0;
+}
 </style>
+

@@ -4,14 +4,14 @@
       style="text-align: start; font-weight: bold; gap: 4px"
       class="d-flex align-items-end"
     >
-      <render-icon :icon="icon" v-if="icon" />
+      <renderIcon :icon="icon" v-if="icon" />
       <span>{{ title }}</span>
     </h3>
   </div>
 </template>
 
 <script>
-import RenderIcon from "./render-icon.vue";
+import RenderIcon from "./renderIcon.vue";
 export default {
   components: {
     RenderIcon,

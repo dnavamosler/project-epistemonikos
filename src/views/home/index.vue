@@ -1,11 +1,9 @@
 <template>
-  <b-container>
+  <template-page icon="cryptocurrencies" title="Cryptocurrencies List">
     <b-row class="justify-content-center">
       <b-col cols="12">
-        <custom-header icon="cryptocurrencies" title="Cryptocurrencies List" />
-      </b-col>
-      <b-col cols="12">
         <b-table
+          borderless
           id="coins"
           small
           striped
@@ -37,15 +35,16 @@
         ></b-pagination>
       </b-col>
     </b-row>
-  </b-container>
+  </template-page>
 </template>
 
 <script>
 import { paginate } from "@/utils/paginate";
 import { MakeRequest } from "@/utils/makeRequest";
-import CustomHeader from "../../components/customHeader.vue";
+import CustomHeader from "@/components/customHeader.vue";
+import TemplatePage from "@/components/ui/templatePage.vue";
 export default {
-  components: { CustomHeader },
+  components: { CustomHeader, TemplatePage },
   mounted() {
     this.getInitialData();
   },
@@ -96,7 +95,6 @@ export default {
     needs processing for pagination since the api does not have pagination */
     async getInitialData() {
       MakeRequest({ path: "coins" }).then((e) => {
-        console.log(e);
         this.coins = e.map((coin) => {
           return {
             ...coin,
